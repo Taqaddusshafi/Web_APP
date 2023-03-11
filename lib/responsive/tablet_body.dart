@@ -31,8 +31,16 @@ class _MyTabletBodyState extends State<MyTabletBody> {
   final Uri _jk = Uri.parse('https://github.com/Taqaddusshafi/Jk-_Browser');
   final Uri _pro = Uri.parse('https://github.com/Taqaddusshafi/profile_app');
   final Uri _usg = Uri.parse('https://github.com/Taqaddusshafi/userstatsapp');
+  final Uri drive = Uri.parse(
+      'https://drive.google.com/file/d/1U3eDlO_Du5ZGqt2_Z_J6ByLsTA2MVfFJ/view?usp=sharing');
   final Uri _fit =
       Uri.parse('https://github.com/Taqaddusshafi/fitness_comiunity_app');
+  Future<void> _Drive() async {
+    if (!await launchUrl(drive, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $drive');
+    }
+  }
+
   Future<void> _port() async {
     if (!await launchUrl(prt, mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $prt');
@@ -292,7 +300,9 @@ class _MyTabletBodyState extends State<MyTabletBody> {
                                 Container(
                                   child: ElevatedButton(
                                     child: Text("Resume"),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      _Drive();
+                                    },
                                     style: ElevatedButton.styleFrom(
                                         backgroundColor:
                                             Color.fromRGBO(10, 25, 47, 11),

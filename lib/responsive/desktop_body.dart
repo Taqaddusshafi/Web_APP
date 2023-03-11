@@ -26,6 +26,9 @@ class _MyHomePageState extends State<MyHomePage> {
   final ScrollController _controller = ScrollController();
   final FocusNode _focusNode = FocusNode();
   final Uri git = Uri.parse('https://github.com/Taqaddusshafi');
+  final Uri drive = Uri.parse(
+      'https://drive.google.com/file/d/1U3eDlO_Du5ZGqt2_Z_J6ByLsTA2MVfFJ/view?usp=sharing');
+
   final Uri prt = Uri.parse('https://github.com/Taqaddusshafi/Web_APP'); //git
   final Uri link =
       Uri.parse('https://www.linkedin.com/in/taqaddus-shafi-36b2701b5');
@@ -42,6 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _fitness() async {
     if (!await launchUrl(_fit, mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $_fit');
+    }
+  }
+
+  Future<void> _Drive() async {
+    if (!await launchUrl(drive, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $drive');
     }
   }
 
@@ -309,7 +318,9 @@ class _MyHomePageState extends State<MyHomePage> {
                                 Container(
                                   child: ElevatedButton(
                                     child: Text("Resume"),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      _Drive();
+                                    },
                                     style: ElevatedButton.styleFrom(
                                         backgroundColor:
                                             Color.fromRGBO(10, 25, 47, 11),

@@ -17,6 +17,7 @@ class MyMObileBody extends StatefulWidget {
 class _MyMObileBodyState extends State<MyMObileBody> {
   final ScrollController _controller = ScrollController();
   final FocusNode _focusNode = FocusNode();
+  final Uri prt = Uri.parse('https://github.com/Taqaddusshafi/Web_APP');
   final Uri git = Uri.parse('https://github.com/Taqaddusshafi'); //git
   final Uri link =
       Uri.parse('https://www.linkedin.com/in/taqaddus-shafi-36b2701b5');
@@ -28,8 +29,22 @@ class _MyMObileBodyState extends State<MyMObileBody> {
   final Uri _jk = Uri.parse('https://github.com/Taqaddusshafi/Jk-_Browser');
   final Uri _pro = Uri.parse('https://github.com/Taqaddusshafi/profile_app');
   final Uri _usg = Uri.parse('https://github.com/Taqaddusshafi/userstatsapp');
+  final Uri drive = Uri.parse(
+      'https://drive.google.com/file/d/1U3eDlO_Du5ZGqt2_Z_J6ByLsTA2MVfFJ/view?usp=sharing');
   final Uri _fit =
       Uri.parse('https://github.com/Taqaddusshafi/fitness_comiunity_app');
+  Future<void> _Drive() async {
+    if (!await launchUrl(drive, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $drive');
+    }
+  }
+
+  Future<void> _port() async {
+    if (!await launchUrl(prt, mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $prt');
+    }
+  }
+
   Future<void> _fitness() async {
     if (!await launchUrl(_fit, mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $_fit');
@@ -257,7 +272,9 @@ class _MyMObileBodyState extends State<MyMObileBody> {
                     contentPadding: EdgeInsets.only(top: 50, left: 20),
                     leading: ElevatedButton(
                       child: Text("Resume"),
-                      onPressed: () {},
+                      onPressed: () {
+                        _Drive();
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromRGBO(10, 25, 47, 11),
                           onPrimary: Color.fromRGBO(
@@ -946,7 +963,9 @@ class _MyMObileBodyState extends State<MyMObileBody> {
                                                   'assets/images/git.png'),
                                               iconSize: 60,
                                               color: Colors.white,
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                _port();
+                                              },
                                             ),
                                           ),
                                           Container(
