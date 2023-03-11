@@ -206,10 +206,9 @@ class _MyHomePageState extends State<MyHomePage> {
             focusNode: _focusNode,
             autofocus: true,
             onKey: _handleKeyEvent,
-            child: Container(
-                width: MediaQuery.of(context).size.width * 1,
-                child: SingleChildScrollView(
-                  controller: _controller,
+            child: SingleChildScrollView(
+                controller: _controller,
+                child: Container(
                   child: SafeArea(
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

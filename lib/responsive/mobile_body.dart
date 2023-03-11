@@ -353,18 +353,9 @@ class _MyMObileBodyState extends State<MyMObileBody> {
                                 TextSpan(
                                     text: 'Taqaddus Shafi ',
                                     style: TextStyle(
-                                        fontSize: 70,
-                                        foreground: Paint()
-                                          ..shader = ui.Gradient.linear(
-                                            const Offset(0, 20),
-                                            const Offset(150, 20),
-                                            <Color>[
-                                              Color.fromRGBO(
-                                                  86, 230, 196, 0.965),
-                                              Color.fromRGBO(
-                                                  220, 132, 38, 0.965)
-                                            ],
-                                          )))
+                                      fontSize: 70,
+                                      color: Colors.orange,
+                                    ))
                               ]))),
                       Container(
                         margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
@@ -429,11 +420,11 @@ class _MyMObileBodyState extends State<MyMObileBody> {
                         width: 150,
                         margin: EdgeInsets.only(left: 30, top: 70),
                         child: ElevatedButton(
-                          child: Text("Hire Me!"),
-                          onPressed: () {
-                            _launchMailClient();
-                          },
-                          style: ElevatedButton.styleFrom(
+                            child: Text("Hire Me!"),
+                            onPressed: () {
+                              _launchMailClient();
+                            },
+                            style: ElevatedButton.styleFrom(
                               backgroundColor: Color.fromRGBO(10, 25, 47, 11),
                               onPrimary: Color.fromRGBO(90, 245, 208,
                                   10), //background color of button
@@ -445,8 +436,7 @@ class _MyMObileBodyState extends State<MyMObileBody> {
                               shape: RoundedRectangleBorder(
                                   //to set border radius to button
                                   borderRadius: BorderRadius.circular(5)),
-                              padding: EdgeInsets.all(20)),
-                        ),
+                            )),
                       ),
                       SizedBox(
                         height: 200,
